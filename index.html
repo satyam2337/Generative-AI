@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Tools</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bottomstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo"><a href="#" onclick="showSection('textToImage')"
+                style="text-decoration: none; color: inherit;">AI</a></div>
+        <ul class="nav-links">
+            <li><a href="#" onclick="showSection('textToImage')" class="active">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Category <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" onclick="showSection('backgroundRemover')">Image Background Remover</a></li>
+                    <li><a href="#" onclick="showSection('imageupscale')">Image Upscaler</a></li>
+                    <li><a href="#" onclick="showSection('imageenhancer')">Image Enhancer</a></li>
+                </ul>
+            </li>
+            <li><a href="#" onclick="showSection('contactpage')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Text to Image Generator -->
+    <div id="textToImage" class="container section">
+        <h1>Text to Image Generator</h1>
+        <textarea id="prompt" placeholder="Enter your text prompt here..."></textarea>
+        <div class="button-container">
+            <button onclick="generateImage()">Generate Image</button>
+            <button onclick="clearResults()">Clear Results</button>
+            <button onclick="generateRandomText()">Random Text</button>
+        </div>
+        <div id="results"></div>
+    </div>
+
+    <!-- Image Background Remover -->
+    <div id="backgroundRemover" class="container section" style="display: none ;">
+        <h1>Image Background Remover</h1>
+        <div class="ImgUp">
+            <div class="cont">
+                <label for="imageUpload">Upload Profile Picture</label>
+                <input type="file" id="imageUpload" accept="image/*" onchange="previewImage(event)">
+                <div id="imagePreview" style="margin-top: 1rem; text-align: center;"></div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button onclick="UploadImg()">Upload</button>
+            <button onclick="clearImage()">Clear Results</button>
+        </div>
+        <div id="results2"></div>
+    </div>
+
+    <!-- Image upscale -->
+    <div id="imageupscale" class="container section" style="display: none ;">
+        <h1>Image Upscaler</h1>
+    </div>
+    <!-- Image enhancer -->
+    <div id="imageenhancer" class="container section" style="display: none ;">
+        <h1>Image Inhancer</h1>
+    </div>
+    <!-- contact -->
+    <div id="contactpage" class="container section" style="display: none ;">
+        <h1>Contact</h1>
+    </div>
+
+    <div class="bottomText">
+        <section class="header">
+            <p>Bring Your Imagination to Life With our Free Online AI Image Generator.</p>
+        </section>
+
+        <section class="features">
+            <h2>Turn Words into Art with AI</h2>
+            <p>Our AI Image Generator uses advanced machine learning algorithms to convert text descriptions into
+                images.</p>
+        </section>
+
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>Is commercial use allowed?</h3>
+                <p>Yes, commercial use is permitted.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I use the generated images for NFTs?</h3>
+                <p>Yes, they can be used for NFTs.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 AI. All rights reserved.</p>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>
