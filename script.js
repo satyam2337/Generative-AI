@@ -4,11 +4,16 @@ function showSection(sectionId) {
     section.style.display = 'none';
   });
   document.getElementById(sectionId).style.display = 'block';
+
+  // Show .bottomText only on "home" section
+  const bottomText = document.querySelector('.bottomText');
+  if (sectionId === 'textToImage') {
+    bottomText.style.display = 'block';
+  } else {
+    bottomText.style.display = 'none';
+  }
 }
 
-window.onload = function () {
-  showSection('textToImage');
-};
 
 
 //scrpit for index page 1
@@ -101,7 +106,6 @@ function generateRandomText() {
 
 
 //page 2 script
-
 function previewImage(event) {
   const imagePreview = document.getElementById("imagePreview");
   const file = event.target.files[0];
